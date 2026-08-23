@@ -34,4 +34,4 @@ npm run dev
 https://review-iq-ai-frontend-vzld.vercel.app/
 ## 📂 GitHub Repository
 
-https://github.com/missalaasalah/ReviewIQ-AI-Frontend
+https://github.com/missalaasalah/ReviewIQ--AI--Frontend
