@@ -2,7 +2,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 export default function TrendTable() {
-  const { t, direction } = useLanguage();
+  const { t, direction, formatNumber } = useLanguage();
 
   const columns = [
     {
@@ -18,12 +18,12 @@ export default function TrendTable() {
   ];
 
   const rows = [
-    { id: 1, month: t("monthJanuary"), rating: 3.8 },
-    { id: 2, month: t("monthFebruary"), rating: 4.0 },
-    { id: 3, month: t("monthMarch"), rating: 4.1 },
-    { id: 4, month: t("monthApril"), rating: 4.3 },
-    { id: 5, month: t("monthMayFull"), rating: 4.4 },
-    { id: 6, month: t("monthJuneFull"), rating: 4.5 },
+    { id: 1, month: t("monthJanuary"), rating: formatNumber(3.8) },
+    { id: 2, month: t("monthFebruary"), rating: formatNumber(4.0) },
+    { id: 3, month: t("monthMarch"), rating: formatNumber(4.1) },
+    { id: 4, month: t("monthApril"), rating: formatNumber(4.3) },
+    { id: 5, month: t("monthMayFull"), rating: formatNumber(4.4) },
+    { id: 6, month: t("monthJuneFull"), rating: formatNumber(4.5) },
   ];
 
   return (
