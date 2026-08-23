@@ -13,30 +13,30 @@ import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 export default function KPICards() {
-  const { t } = useLanguage();
+  const { t, formatNumber } = useLanguage();
 
   const cards = [
     {
       title: t("totalReviews"),
-      value: "2,890",
+      value: formatNumber("2,890"),
       subtitle: t("customerReviewsAnalyzed"),
       icon: <ReviewsIcon />,
     },
     {
       title: t("averageRating"),
-      value: "4.3",
+      value: formatNumber("4.3"),
       subtitle: t("overallCustomerRating"),
       icon: <StarIcon />,
     },
     {
       title: t("positiveSentiment"),
-      value: "78%",
+      value: formatNumber("78%"),
       subtitle: t("positiveCustomerFeedback"),
       icon: <SentimentSatisfiedAltIcon />,
     },
     {
       title: t("customerSatisfaction"),
-      value: "86%",
+      value: formatNumber("86%"),
       subtitle: t("overallSatisfaction"),
       icon: <TrendingUpIcon />,
     },
