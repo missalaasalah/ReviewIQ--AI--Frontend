@@ -2,7 +2,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 export default function BranchTable() {
-  const { t, direction } = useLanguage();
+  const { t, direction, formatNumber } = useLanguage();
 
   const columns = [
     {
@@ -31,23 +31,23 @@ export default function BranchTable() {
     {
       id: 1,
       branch: t("nasr"),
-      reviews: 4200,
-      rating: 4.6,
-      positive: "88%",
+      reviews: formatNumber(4200),
+      rating: formatNumber(4.6),
+      positive: formatNumber("88%"),
     },
     {
       id: 2,
       branch: t("maadi"),
-      reviews: 3100,
-      rating: 4.2,
-      positive: "79%",
+      reviews: formatNumber(3100),
+      rating: formatNumber(4.2),
+      positive: formatNumber("79%"),
     },
     {
       id: 3,
       branch: t("dokki"),
-      reviews: 2900,
-      rating: 3.8,
-      positive: "68%",
+      reviews: formatNumber(2900),
+      rating: formatNumber(3.8),
+      positive: formatNumber("68%"),
     },
   ];
 
