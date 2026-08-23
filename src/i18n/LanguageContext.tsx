@@ -18,6 +18,27 @@ interface LanguageContextType {
   direction: Direction;
   t: (key: keyof typeof translations.en) => string;
   toggleLanguage: () => void;
+  formatNumber: (value: number | string) => string;
+}
+
+const arabicDigits = [
+  "٠",
+  "١",
+  "٢",
+  "٣",
+  "٤",
+  "٥",
+  "٦",
+  "٧",
+  "٨",
+  "٩",
+];
+
+function toArabicDigits(value: number | string): string {
+  return String(value).replace(
+    /[0-9]/g,
+    (digit) => arabicDigits[Number(digit)]
+  );
 }
 
 const LanguageContext = createContext<
@@ -64,11 +85,20 @@ export function LanguageProvider({
     return translations[language][key];
   };
 
+  const formatNumber = (
+    value: number | string
+  ): string => {
+    return language === "ar"
+      ? toArabicDigits(value)
+      : String(value);
+  };
+
   const value: LanguageContextType = {
     language,
     direction,
     t,
     toggleLanguage,
+    formatNumber,
   };
 
   return (
