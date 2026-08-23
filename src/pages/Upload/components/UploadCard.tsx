@@ -6,7 +6,7 @@ import {
   Button
 } from "@mui/material";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 
@@ -14,6 +14,12 @@ export default function UploadCard() {
   const { t } = useLanguage();
 
   const [file, setFile] = useState<File | null>(null);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleChooseFileClick = () => {
+    fileInputRef.current?.click();
+  };
 
 
   const handleFileChange = (
@@ -75,34 +81,34 @@ export default function UploadCard() {
 
         <Box
           sx={{
-            mb: 3
+            mb: 3,
+            display: "flex",
+            alignItems: "center",
+            gap: 2,
           }}
         >
 
+          {/* Hidden native input, triggered by our own translated button */}
           <input
+            ref={fileInputRef}
             type="file"
             accept=".csv,.xlsx"
             onChange={handleFileChange}
+            style={{ display: "none" }}
           />
 
-
-        </Box>
-
-
-
-        {file && (
-
-          <Typography
-            sx={{
-              mb: 2
-            }}
+          <Button
+            variant="outlined"
+            onClick={handleChooseFileClick}
           >
+            {t("chooseFile")}
+          </Button>
 
-            {t("selectedFile")}: {file.name}
-
+          <Typography color="text.secondary">
+            {file ? file.name : t("noFileChosen")}
           </Typography>
 
-        )}
+        </Box>
 
 
 
