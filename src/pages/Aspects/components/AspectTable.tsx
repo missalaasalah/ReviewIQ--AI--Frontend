@@ -2,7 +2,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 export default function AspectTable() {
-  const { t, direction } = useLanguage();
+  const { t, direction, formatNumber } = useLanguage();
 
   const columns = [
     {
@@ -31,30 +31,30 @@ export default function AspectTable() {
     {
       id: 1,
       aspect: t("food"),
-      positive: "85%",
-      neutral: "10%",
-      negative: "5%",
+      positive: formatNumber("85%"),
+      neutral: formatNumber("10%"),
+      negative: formatNumber("5%"),
     },
     {
       id: 2,
       aspect: t("service"),
-      positive: "72%",
-      neutral: "15%",
-      negative: "13%",
+      positive: formatNumber("72%"),
+      neutral: formatNumber("15%"),
+      negative: formatNumber("13%"),
     },
     {
       id: 3,
       aspect: t("delivery"),
-      positive: "60%",
-      neutral: "20%",
-      negative: "20%",
+      positive: formatNumber("60%"),
+      neutral: formatNumber("20%"),
+      negative: formatNumber("20%"),
     },
     {
       id: 4,
       aspect: t("price"),
-      positive: "68%",
-      neutral: "18%",
-      negative: "14%",
+      positive: formatNumber("68%"),
+      neutral: formatNumber("18%"),
+      negative: formatNumber("14%"),
     },
   ];
 
