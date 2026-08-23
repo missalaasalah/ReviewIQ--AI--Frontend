@@ -30,8 +30,8 @@ npm run dev
 ```
 
 ## 🌐 Live Demo
+https://review-iq-ai-frontend.vercel.app/
 
-https://review-iq-ai-frontend-vzld.vercel.app/
 ## 📂 GitHub Repository
 
 https://github.com/missalaasalah/ReviewIQ--AI--Frontend
